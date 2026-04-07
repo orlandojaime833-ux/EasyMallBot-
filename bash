@@ -1,0 +1,2 @@
+cd EasyMallBot
+npm install
