@@ -1,0 +1,162 @@
+{
+  "name": "easymall-bot",
+  "version": "3.0.0",
+  "description": "EasyMall - Global Sales Platform on Telegram | Multi-language AI Bot with Affiliate System, Payments, and Analytics",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js",
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "db:migrate": "node scripts/migrate.js",
+    "db:seed": "node scripts/seed.js",
+    "backup": "node scripts/backup.js",
+    "admin:stats": "node scripts/admin-stats.js",
+    "webhook:setup": "node scripts/setup-webhook.js"
+  },
+  "dependencies": {
+    "telegraf": "^4.15.3",
+    "express": "^4.18.2",
+    "axios": "^1.6.2",
+    "pg": "^8.11.3",
+    "node-cron": "^3.0.3",
+    "dotenv": "^16.3.1",
+    "telegraf-ai": "^1.0.0",
+    "telegraf-i18n": "^1.0.0",
+    "telegraf-session-local": "^2.1.0",
+    "telegraf-rate-limit": "^1.0.0",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "compression": "^1.7.4",
+    "helmet": "^7.1.0",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^7.1.5",
+    "express-session": "^1.18.0",
+    "connect-pg-simple": "^9.0.0",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^9.0.1",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
+    "lodash": "^4.17.21",
+    "nodemailer": "^6.9.7",
+    "qrcode": "^1.5.3",
+    "chart.js": "^4.4.1",
+    "chartjs-node-canvas": "^4.1.6",
+    "csv-writer": "^1.6.0",
+    "pdfkit": "^0.14.0",
+    "exceljs": "^4.4.0",
+    "bull": "^4.11.5",
+    "redis": "^4.6.10",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1",
+    "web-push": "^3.6.7",
+    "stripe": "^14.8.0",
+    "mercadopago": "^2.0.6",
+    "paypal-rest-sdk": "^1.8.1",
+    "@binance/pay": "^1.0.0",
+    "xrocket-pay-api-sdk": "^1.0.0",
+    "@neondatabase/serverless": "^0.6.0",
+    "mongoose": "^8.0.3",
+    "prisma": "^5.7.0",
+    "@prisma/client": "^5.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "dotenv-cli": "^7.3.0",
+    "cross-env": "^7.0.3",
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0 <21.0.0",
+    "npm": ">=9.0.0"
+  },
+  "os": ["linux", "darwin", "win32"],
+  "cpu": ["x64", "arm64"],
+  "private": false,
+  "keywords": [
+    "telegram",
+    "bot",
+    "ecommerce",
+    "easymall",
+    "sales",
+    "affiliate",
+    "ai",
+    "gemini",
+    "xrocket",
+    "crypto",
+    "payments",
+    "marketplace",
+    "multi-tenant",
+    "shop",
+    "store"
+  ],
+  "author": {
+    "name": "EasyMall",
+    "email": "contact@easymall.com",
+    "url": "https://easymall.com"
+  },
+  "contributors": [
+    {
+      "name": "Orlando Jaime",
+      "role": "Founder & Developer"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orlandojamie833-ux/easymall-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/orlandojamie833-ux/easymall-bot/issues"
+  },
+  "homepage": "https://easymall.com",
+  "funding": {
+    "type": "individual",
+    "url": "https://ko-fi.com/easymall"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage",
+    "testMatch": ["**/__tests__/**/*.js", "**/?(*.)+(spec|test).js"]
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-console": "off",
+      "no-unused-vars": "warn"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "printWidth": 100
+  },
+  "nodemonConfig": {
+    "watch": ["bot.js", "modules/", "config/"],
+    "ignore": ["node_modules/", "logs/", "coverage/"],
+    "ext": "js,json",
+    "delay": 1000
+  }
+}
